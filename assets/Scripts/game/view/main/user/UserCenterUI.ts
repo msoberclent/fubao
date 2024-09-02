@@ -96,7 +96,7 @@ export class UserCenterUI extends PiterView {
 
 
         let date = Math.ceil((Date.now() - new Date(Global.PLAYER.player.regDate).getTime()) / (24 * 60 * 60 * 1000));
-        this.AT_TimeLabel.getComponent(RichText).string = `<color=#a09f9d>已加入新澳国际</color><color=#ea4e3d>第${date}天</color>`
+        this.AT_TimeLabel.getComponent(RichText).string = `<color=#a09f9d>已加入福宝娱乐</color><color=#ea4e3d>第${date}天</color>`
     }
 
 
