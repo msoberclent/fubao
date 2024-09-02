@@ -1,0 +1,25 @@
+{
+    "remoteUrl": "http://gm888.pro/hot/release/subgames/",
+    "historyUrls": [],
+    "version": "1.0.0.1",
+    "buildDir": "build/android-release/data/",
+    "remoteDir": "hotupdate-subgame/release/",
+    "buildDir1": "/Users/zhuanz/Documents/qbn-slo/build/android-release/data/",
+    "remoteDir1": "/Users/zhuanz/Documents/qbn-slo/hotupdate-subgame/release/",
+    "subPackages": [
+        "kpnn4_game",
+        "yxx_game",
+        "dax_game",
+        "brnn_game",
+        "bjl_game",
+        "lhd_game",
+        "hh_game",
+        "sedie_game",
+        "bcbm_game",
+        "ysz_game",
+        "sang_game",
+        "hbsl_game",
+        "zjh_game"
+    ],
+    "curName": "main"
+}

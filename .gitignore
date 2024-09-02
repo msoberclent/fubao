@@ -1,0 +1,78 @@
+
+#///////////////////////////
+# Cocos Creator 3D Project
+#///////////////////////////
+hulue/
+library/
+temp/
+local/
+
+build/
+build/android/
+build/web-mobile/
+build/web-release/
+build/web-desktop/
+build/android_debug/
+build/android-release/
+
+build/android-test/assets/
+build/android-test/data/
+build/android-test/proj/build/
+
+build/ios-release/assets
+build/ios-release/data
+build/ios-release/remote
+build/ios-release/proj/build
+build/ios-release/proj/archives
+build/ios-release/proj/qbn-slo.build
+build/ios-release/proj/Release-iphoneos
+build/ios-release/proj/Debug-iphoneos
+build/ios-release/proj/Debug-iphonesimulator
+
+build/ios-prod
+
+！lib.a #但lib.a除外
+/TODO #仅仅忽略项目根目录下的TODO文件，不包括subdir/TODO
+build/ #忽略build/目录下的所有文件
+doc/*.txt #忽略doc/notes.txt，但不包括doc/server/arch.txt
+
+build/android/assets/
+build/android/data/
+profiles/
+hotupdate-assets/
+#//////////////////////////
+# NPM
+#//////////////////////////
+node_modules/
+
+#//////////////////////////
+# VSCode
+#//////////////////////////
+.vscode/
+
+#//////////////////////////
+# WebStorm
+#//////////////////////////
+.idea/
+
+~$*.xlsx
+
+*/.DS_Store
+.DS_Store
+*.zip
+*.ipa
+*.apk
+/*/*.apk
+
+/build/android-test/proj/gradle.properties
+/build/android-test/proj/cfg.cmake
+/build/android-test/proj/cocos.compile.config.json
+/hotupdate-subgame
+/build/android-test/remote
+/build/android-debug
+/build/android-test/cocos.compile.config.json
+/build/android-test
+
+
+/androidMaJia.js
+/build/web-release

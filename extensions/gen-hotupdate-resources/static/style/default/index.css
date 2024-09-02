@@ -1,0 +1,40 @@
+#text {
+    color: var(--color-normal-contrast-weakest);
+    margin: auto;
+    width: 180px;
+}
+
+.greenColor {
+    color: #11ff00;
+}
+
+div.section {
+    padding: 10px;
+}
+
+ui-prop {
+    padding: 5px;
+}
+
+
+.toright{
+    float: right;
+}
+
+#view {
+    padding: 10px;
+    padding-top: 0px;
+    overflow:scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.log {
+    margin-top: 5px;
+    width: 100%;
+    height: 100px;
+    background: #252525;
+    resize: none;
+    color: #fd942b;
+    border-color: #fd942b;
+}

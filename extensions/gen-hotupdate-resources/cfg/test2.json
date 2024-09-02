@@ -1,0 +1,23 @@
+{
+    "remoteUrl": "http://47.242.164.151/hot/release/subgames/",
+    "historyUrls": [],
+    "version": "1.0.0.1",
+    "buildDir": "build/android-test/data/",
+    "remoteDir": "hotupdate-subgame/test2/",
+    "subPackages": [
+        "kpnn4_game",
+        "yxx_game",
+        "dax_game",
+        "brnn_game",
+        "bjl_game",
+        "lhd_game",
+        "hh_game",
+        "sedie_game",
+        "bcbm_game",
+        "ysz_game",
+        "sang_game",
+        "hbsl_game",
+        "zjh_game"
+    ],
+    "curName": "test2"
+}

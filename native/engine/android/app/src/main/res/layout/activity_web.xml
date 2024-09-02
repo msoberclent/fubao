@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
+    tools:context="com.cocos.game.SubGameWebView">
+    <WebView
+        android:id="@+id/wv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:scrollbars="none">
+    </WebView>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="90px"
+        android:layout_height="90px"
+
+        android:layout_alignParentRight="false"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/home"
+        android:text='' />
+
+    <Button
+        android:id="@+id/rotationButton"
+        android:layout_width="90px"
+        android:layout_height="90px"
+
+        android:layout_alignParentRight="false"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:background="@mipmap/home"
+        android:text='' />
+</RelativeLayout>

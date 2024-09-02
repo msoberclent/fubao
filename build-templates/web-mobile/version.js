@@ -1,0 +1,1 @@
+var WebClient = { VERSION:'v1.0.2'};   window['WebClient'] = WebClient

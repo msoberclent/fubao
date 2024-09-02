@@ -1,0 +1,143 @@
+<div id="view" class="scroll">
+    <div class="section">
+        <ui-section header="子包全局配置" expand>
+            <ui-prop>
+                <ui-label slot="label">测试_服务器地址url</ui-label>
+                <ui-input slot="content" placeholder="测试包服务器地址" :value="testCfgData.remoteUrl"
+                    @confirm="onMainTestRemoteUrlChange($event.target.value)"></ui-input>
+            </ui-prop>
+            <ui-prop>
+                <ui-label slot="label">测试_build项目资源文件目录</ui-label>
+                <ui-file slot="content" :value="testCfgData.buildDir" type="directory"
+                    @confirm="onMainTestBuildDirChange($event.target.value)"></ui-file>
+            </ui-prop>
+
+            <ui-prop>
+                <ui-label slot="label">测试_生成热更资源文件目录</ui-label>
+                <ui-file slot="content" :value="testCfgData.remoteDir" type="directory"
+                    @confirm="onMainTestRemoteDirChange($event.target.value)"></ui-file>
+            </ui-prop>
+
+            <ui-prop>
+                <ui-label slot="label">正式_服务器地址url</ui-label>
+                <ui-input slot="content" placeholder="正式服务器地址" :value="mainCfgData.remoteUrl"
+                    @confirm="onMainRemoteUrlChange($event.target.value)"></ui-input>
+            </ui-prop>
+            <ui-prop>
+                <ui-label slot="label">正式_build项目资源文件目录</ui-label>
+                <ui-file slot="content" :value="mainCfgData.buildDir" type="directory"
+                    @confirm="onMainBuildDirChange($event.target.value)"></ui-file>
+            </ui-prop>
+            <ui-prop>
+                <ui-label slot="label">正式_生成热更资源文件目录</ui-label>
+                <ui-file slot="content" :value="mainCfgData.remoteDir" type="directory"
+                    @confirm="onMainRemoteDirChange($event.target.value)"></ui-file>
+            </ui-prop>
+
+            <!-- <ui-prop>
+                <ui-label slot="label">历史资源服务器url</ui-label>
+                <ui-select slot="content" @confirm="onChangeHistoryConfirm($event.target.value)">
+                    <option v-for="historyUrl in mainCfgData.historyUrls" :value="historyUrl">{{historyUrl}}</option>
+                </ui-select>
+            </ui-prop>
+            <ui-prop>
+                <ui-label slot="label">热更版本</ui-label>
+                <ui-input slot="content" :value="mainCfgData.version"
+                    @confirm="onMainVersionChange($event.target.value)"></ui-input>
+            </ui-prop> -->
+
+            <ui-section header="添加子包" style="height: 300px; overflow: auto;" expand>
+                <div style="height: 5px;"></div>
+                <ui-prop>
+                    <div class="flex-1 layout horizontal center">
+                        <ui-select class="flex-2" style="margin-left: 10px; width: 100px"
+                            @confirm="onMainSubPackageConfirm($event.target.value)">
+                            <option v-for="subBundle in subBundles" :value="subBundle">{{subBundle}}</option>
+                        </ui-select>
+                        <ui-button type="default" style="margin-left: 10px;"
+                            @click="updateSubPackageList">刷新子游戏</ui-button>
+                        <ui-button style="margin-left: 30px;" type="primary"
+                            @click="clickAddMainSubPackage">添加子游戏</ui-button>
+                    </div>
+                </ui-prop>
+                <div class="child">
+                    <subpacakage-item v-for="subpackage in mainCfgData.subPackages" v-bind:subpackage="subpackage"
+                        v-on:remove="removeSubPackage">
+                    </subpacakage-item>
+                </div>
+            </ui-section>
+            <div style="height: 10px;"></div>
+            <div>
+                <ui-prop>
+                    <div class="flex-1 layout horizontal center">
+                        <ui-button class="toright" type="primary" @click="updateMainPackInfo">保存子包信息</ui-button>
+                        <ui-button class="toright" style="margin-right: 30px;" type="primary"
+                            @click="generatorTestPackage">生成所有子包(测试)</ui-button>
+                        <ui-button class="toright" style="margin-right: 30px;" type="primary"
+                            @click="generatorMainPackage">生成所有子包(正式)</ui-button>
+                    </div>
+                </ui-prop>
+            </div>
+        </ui-section>
+
+        <ui-section header="子包构建">
+            <ui-prop>
+                <ui-select slot="label" style="width: 100px;">
+                    <ui-select class="flex-2" style="width: 150px" @confirm="onSubPackageChange($event.target.value)">
+                        <option v-for="subBundle in subBundles" :value="subBundle">{{subBundle}}</option>
+                    </ui-select>
+                </ui-select>
+                <ui-input slot="content" placeholder="子包版本" :value="subCfgData.version"
+                    @confirm="onSubPackageVersionChange($event.target.value)"></ui-input>
+            </ui-prop>
+            <!-- <ui-prop>
+                <ui-label slot="label">资源服务器url</ui-label>
+                <ui-input slot="content" placeholder="远程服务器地址" :value="subCfgData.remoteUrl"
+                    @confirm="onSubPackageRemoteUrlChange($event.target.value)"></ui-input>
+            </ui-prop>
+            <ui-prop>
+                <ui-label slot="label">历史资源服务器url</ui-label>
+                <ui-select slot="content">
+                    <ui-select slot="content" @confirm="onSubPackageHistoryChange($event.target.value)">
+                        <option v-for="subhistoryUrl in subCfgData.historyUrls" :value="subhistoryUrl">{{subhistoryUrl}}
+                        </option>
+                    </ui-select>
+                </ui-select>
+            </ui-prop>
+            <ui-prop>
+                <ui-label slot="label">build项目资源文件目录</ui-label>
+                <ui-file slot="content" :value="subCfgData.buildDir" type="directory"
+                    @confirm="onSubPackageBuildDir($event.target.value)"></ui-file>
+            </ui-prop>
+
+            <ui-prop>
+                <ui-label slot="label">生成热更资源文件目录</ui-label>
+                <ui-file slot="content" :value="subCfgData.remoteDir" type="directory"
+                    @confirm="onSubPackageRemoteDir($event.target.value)"></ui-file>
+            </ui-prop> -->
+
+            <div style="height: 10px;"></div>
+            <div>
+                <ui-button @click="clearLog" style="margin-left: 30px;" class="toright" type="default"
+                    @confirm="onSubPackageUpdate()">保存子包配置</ui-button>
+
+                <ui-button @click="clearLog" class="toright" type="default"
+                    @confirm="onSubPackageGenerator()">生成子包资源</ui-button>
+            </div>
+        </ui-section>
+        <div style="height: 20px;"></div>
+        <div>
+            <ui-progress value="0" success></ui-progress>
+        </div>
+    </div>
+
+    <ui-section header="日志:" expand>
+        <label>
+            <!-- <textarea class="log"></textarea> -->
+            <textarea class="flex-1 log" v-model="logView"></textarea>
+        </label>
+        <div>
+            <ui-button @click="clearLog" class="toright" type="danger">清除日志</ui-button>
+        </div>
+    </ui-section>
+</div>

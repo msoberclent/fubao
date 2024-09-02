@@ -1,0 +1,17 @@
+{
+    "name": "piter_assests_decode",
+    "title": "i18n:piter_assests_decode.title",
+    "package_version": 2,
+    "version": "1.0.0",
+    "author": "Cocos Creator",
+    "description": "i18n:piter_assests_decode.description",
+    "contributions": {
+        "builder": "./dist/builder.js"
+    },
+    "dependencies": {
+        "@types/fs-extra": "^5.0.4",
+        "@types/node": "^14.5.2",
+        "child_process": "^1.0.2",
+        "fs-extra": "^10.0.0"
+    }
+}

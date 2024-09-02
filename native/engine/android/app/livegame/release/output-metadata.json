@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.live.mx",
+  "variantName": "livegameRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 5,
+      "versionName": "1.0.5",
+      "outputFile": "mengxiang-livegame-release.apk"
+    }
+  ],
+  "elementType": "File"
+}
